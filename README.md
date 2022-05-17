@@ -6,4 +6,4 @@ You can customize it as you like by editing the `src/profile.tsx` file. For styl
 
 Run it with `npm run dev`, build it with `npm run build`.
 
-**ON LINUX**: for deployment, use `chmod +x ./deploy.sh` and `npm run deploy`.
+**ON LINUX**: for deployment change the target repository in `./deploy.sh` for your repository and then use `chmod +x ./deploy.sh` and `npm run deploy`.
