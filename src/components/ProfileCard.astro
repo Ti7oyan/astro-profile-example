@@ -1,0 +1,112 @@
+---
+import IProfile from '../types/profile';
+import { FaGithub, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+
+export interface Props {
+  profile: IProfile
+}
+
+const {profile} = Astro.props as Props;
+---
+
+<article>
+  <img src={profile.avatar} alt={`${profile.name}'s profile picture.'`} />
+  <h1>{profile.name}</h1>
+  <h2>{profile.role}</h2>
+  <p>{profile.description}</p>
+  <ul>
+    <li data-social="instagram">
+      <a
+        href={profile.socials.instagram}
+        target="_blank"
+      >
+        <FaInstagram />
+      </a>
+    </li>
+
+    <li>
+      <a
+        href={profile.socials.github}
+        target="_blank"
+      >
+        <FaGithub />
+      </a>
+    </li>
+
+    <li>
+      <a
+        href={profile.socials.linkedin}
+        target="_blank"
+      >
+        <FaLinkedinIn />
+      </a>
+    </li>
+  </ul>
+</article>
+
+<style>
+  :root {
+    --light-blue: #38f;
+  }
+  article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1em;
+  }
+
+  img {
+    align-self: center;
+    width: 12em;
+    height: 12em;
+    border-radius: 9999px;
+    object-fit: cover;
+    margin-block-end: 1em;
+  }
+
+  h1 {
+    font-size: 2.15em;
+    color: var(--light-blue);
+    margin: 0;
+  }
+
+  h2 {
+    text-align: center;
+    color: var(--light-blue);
+    opacity: 50%;
+    margin-block-start: .25em;
+    font-size: 1.25em;
+  }
+
+  p {
+    color: #eee;
+    margin-block-start: .25em;
+  }
+
+  ul {
+    min-width: 100%;
+    margin-block-start: 0;
+    padding-inline-start: 0;
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+  }
+
+  li {
+    border-radius: .5rem;
+    padding: 1em;
+    align-self: center;
+  }
+  
+  a {
+    width: 2em;
+    height: 2em;
+    font-size: 2em;
+    color: #fff;
+    transition: all .25s;
+  }
+
+  a:hover {
+    color: var(--light-blue);
+  }
+</style>

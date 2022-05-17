@@ -1,0 +1,24 @@
+---
+// Components
+import Layout from '../layouts/Layout.astro';
+import ProfileCard from '../components/ProfileCard.astro';
+
+// Data
+import profile from '../data/profile';
+---
+<Layout title="Ticiano Morvan's Blog">
+	<main>
+		<ProfileCard profile={profile} client:load />
+	</main>
+</Layout>
+
+<style>
+	main {
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin: 0 auto;
+	}
+</style>
